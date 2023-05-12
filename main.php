@@ -71,7 +71,7 @@
         })
     }
 
-        // delete button
+        // complete button
         let allCompleteBtns = document.querySelectorAll('.complete-btn');
 
         for (i = 0; i < allCompleteBtns.length; i++){
@@ -82,6 +82,27 @@
                 parentElement.style.setProperty('text-decoration', 'line-through')
                 // console.log(elem);
                 console.log('hello');
+                saveTasks();
+            })
+        }
+
+        // all btns
+        let allBtns = document.querySelectorAll('button');
+
+        for (i = 0; i < allBtns.length; i++){
+            console.log(allBtns[i])
+            allBtns[i].addEventListener('click', function(event) {
+                // console.log(event.target.textContent)
+                let parentElement = event.target.parentNode;
+
+                if(event.target.textContent.includes('Delete')){
+                    todoList.removeChild(parentElement)
+                    // saveTasks();
+                }
+
+                if(event.target.textContent.includes('Complete')) {
+                    parentElement.style.setProperty('text-decoration', 'line-through')
+                }
                 saveTasks();
             })
         }

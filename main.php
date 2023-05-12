@@ -56,36 +56,6 @@
 
     }
 
-    // delete button
-    let allDeleteBtns = document.querySelectorAll('.delete-btn');
-
-    for (i = 0; i < allDeleteBtns.length; i++){
-        // console.log(allDeleteBtns[0])
-        allDeleteBtns[i].addEventListener('click', function(event) {
-            let parentElement = event.target.parentNode;
-            console.log(parentElement);
-            todoList.removeChild(parentElement)
-            // console.log(elem);
-            console.log('hello');
-            saveTasks();
-        })
-    }
-
-        // complete button
-        let allCompleteBtns = document.querySelectorAll('.complete-btn');
-
-        for (i = 0; i < allCompleteBtns.length; i++){
-            // console.log(allCompleteBtns[0])
-            allCompleteBtns[i].addEventListener('click', function(event) {
-                let parentElement = event.target.parentNode;
-                console.log(parentElement);
-                parentElement.style.setProperty('text-decoration', 'line-through')
-                // console.log(elem);
-                console.log('hello');
-                saveTasks();
-            })
-        }
-
         // all btns
         let allBtns = document.querySelectorAll('button');
 
